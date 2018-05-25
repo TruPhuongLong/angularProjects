@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
-import { AppComponent } from './app.component';
 import {HomeModule} from './components/pages/home/home.module';
 import {AboutModule} from './components/pages/about/about.module';
+import { ListProductModule } from './components/pages/list-product/list-product.module';
 
-
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +15,7 @@ import {AboutModule} from './components/pages/about/about.module';
     BrowserModule,
     HomeModule,
     AboutModule,
+    ListProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

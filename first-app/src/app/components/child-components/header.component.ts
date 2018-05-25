@@ -1,9 +1,16 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-header',
-    template: 
-    `<div><h1>header</h1></div>`
+    template:
+        `<div class="header-container">
+            <ng-content></ng-content>
+        </div>`,
+    styles: [`
+            .header-container{
+                padding: 5px;
+            }
+        `]
 })
 
-export class HeaderComponent{}
+export class HeaderComponent { }

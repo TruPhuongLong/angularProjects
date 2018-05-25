@@ -1,9 +1,16 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-footer',
-    template: 
-    `<div><h1>footer</h1></div>`
+    template:
+        `<div class="footer-container">
+            <ng-content></ng-content>
+        </div>`,
+    styles: [`
+            .footer-container{
+                padding: 5px;
+            }
+        `]
 })
 
-export class FooterComponent{}
+export class FooterComponent { }

@@ -1,16 +1,19 @@
 import {NgModule} from '@angular/core';
 
-import {HomeComponent} from './home.component';
-import { HeaderComponent } from '../../child-components/header.component';
-import { FooterComponent } from '../../child-components/footer.component';
+import { ChildModule } from '../../child-components/child.module';
+
+import { HomeComponent } from './home.component';
 
 @NgModule({
     declarations: [
         HomeComponent,
-        HeaderComponent,
-        FooterComponent,
     ],
-    exports: [HomeComponent]
+    imports: [
+        ChildModule,
+    ],
+    exports: [
+        HomeComponent
+    ]
 })
 
 export class HomeModule{}
