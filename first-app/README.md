@@ -1,3 +1,16 @@
+commonModule: for use pipe json, *ngFor...
+FormModule: for use ngModel...
+reactiveFormModule: for use binding form at template from code.
+
+
+
+
+
+
+
+
+
+
 # FirstApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
