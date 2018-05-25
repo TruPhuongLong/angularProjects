@@ -1,4 +1,5 @@
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 import {ChildModule} from '../../child-components/child.module'
 
@@ -9,6 +10,7 @@ import {ListProductComponent} from './list-product.component';
         ListProductComponent,
     ],
     imports: [
+        CommonModule,
         ChildModule,
     ],
     exports: [

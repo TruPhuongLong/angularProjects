@@ -1,7 +1,23 @@
-<p>
-  list-product works!
-</p>
+<app-header>
+  <h1>List Product</h1>
+</app-header>
 
+<br/>
+<br/>
+<br/>
 
+<div class="list-container">
+  <app-card *ngFor="let item of items" [item]="item">
+    <p>{{item.content}}</p>
+    <p>{{item.content}}</p>
+    <p>{{item.content}}</p>
+  </app-card>
+</div>
 
+<br/>
+<br/>
+<br/>
 
+<app-footer>
+  <i>welcome here, good luck</i>
+</app-footer>

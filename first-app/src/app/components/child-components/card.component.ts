@@ -6,13 +6,13 @@ import { Component, Input } from '@angular/core';
         `
         <div class="card-container">
             <app-header>
-                <h3>title</h3>
+                <h3>{{item?.title ? item.title : 'Header'}}</h3>
             </app-header>
             <div class="card-content">
-
+                <ng-content></ng-content>
             </div>
             <app-footer>
-                <i>regard</i>
+                <i>{{item?.footer ? item.footer : 'Footer'}}</i>
             </app-footer>
         </div>
     `,
@@ -26,6 +26,7 @@ import { Component, Input } from '@angular/core';
             background-color: grey;
             color: white;
             box-shadow: 2px 2px #F5F5F5;
+            padding: 5px 20px;
             margin: 20px;
         }
         
@@ -36,5 +37,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class CardComponent {
-    
+    @Input() item;
 }
