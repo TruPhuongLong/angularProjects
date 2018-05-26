@@ -9,7 +9,7 @@ export class ListProductComponent {
   items;
   initItems(){
     this.items = [
-      {id: 1, header: 'Victory1', footer: 'regard1', content: 'this is fun day!!!'},
+      {id: 1, header: 'Victory1', footer: 'regard1'},
       {id: 2, header: 'Victory2', footer: 'regard2', content: 'this is fun day!!!'},
       {id: 3, header: 'Victory3', footer: 'regard3', content: 'this is fun day!!!'},
       {id: 4, header: 'Victory4', footer: 'regard4', content: 'this is fun day!!!'},

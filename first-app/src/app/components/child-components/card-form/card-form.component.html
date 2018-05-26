@@ -3,7 +3,7 @@
     <label for="text" class="control-label col-sm-2">{{input.label ? input.label : 'Label:'}}</label>
     <div class="col-sm-10">
       <input [type]="input.type ? input.type : 'text'" class="form-control" id="text" [placeholder]="input.placeholder ? input.placeholder : 'text input'"
-        [formControlName]="input.formControlName" />
+        [formControlName]="input.formControlName" autofocus/>
       <div [hidden]="cardForm.controls[input.formControlName].valid || cardForm.controls[input.formControlName].pristine" class="alert alert-danger">
         {{input.formControlName}} is required
       </div>

@@ -13,8 +13,8 @@
 <br/>
 
 <div class="list-container">
-  <app-card *ngFor="let item of items" [item]="item">
-    <p>{{item.content}}</p>
+  <app-card *ngFor="let item of items" [item]="item" >
+    <p>{{item.content}}?</p>
     <p>{{item.content}}</p>
     <p>{{item.content}}</p>
   </app-card>
@@ -37,7 +37,7 @@
         <h4 class="modal-title">And Card</h4>
       </div>
       <div class="modal-body">
-        <app-card-form (onSubmit)="_onSubmit($event)"></app-card-form>
+        <app-card-form (onSubmit)="_onSubmit($event)" ></app-card-form>
       </div>
       <div class="modal-footer">
         <i>best wish for you</i>

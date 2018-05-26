@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {ChildModule} from '../../child-components/child.module'
+import {ChildModule} from '../../child-components/child.module';
+import {DirectiveModule} from '../../directives/directive.module';
 
 import {ListProductComponent} from './list-product.component';
 
@@ -12,6 +13,7 @@ import {ListProductComponent} from './list-product.component';
     imports: [
         CommonModule,
         ChildModule,
+        DirectiveModule,
     ],
     exports: [
         ListProductComponent,

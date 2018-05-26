@@ -23,7 +23,7 @@ import { Component, Input } from '@angular/core';
             width: 200px;
             height: 300px;
             border-radius: 10px;
-            background-color: grey;
+            background-color: tomato;
             color: white;
             box-shadow: 2px 2px #F5F5F5;
             padding: 5px 20px;
