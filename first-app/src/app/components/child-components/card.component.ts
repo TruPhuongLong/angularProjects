@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
         `
         <div class="card-container">
             <app-header>
-                <h3>{{item?.title ? item.title : 'Header'}}</h3>
+                <h3>{{item?.header ? item.header : 'Header'}}</h3>
             </app-header>
             <div class="card-content">
                 <ng-content></ng-content>
