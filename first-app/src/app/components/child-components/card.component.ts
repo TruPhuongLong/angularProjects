@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 
+
 @Component({
     selector: 'app-card',
     template:
         `
-        <div class="card-container">
+        <div class="card-container" [tpl-hover]="{color: 'blue'}">
             <app-header>
                 <h3>{{item?.header ? item.header : 'Header'}}</h3>
             </app-header>

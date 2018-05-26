@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
+import {DirectiveModule} from '../directives/directive.module';
+
 import { CardComponent } from './card.component';
 import { EntryInputComponent } from './entry-input.component';
 import { FooterComponent } from './footer.component';
@@ -22,6 +24,7 @@ import { CardFormComponent } from './card-form/card-form.component';
         FormsModule,
         ReactiveFormsModule,
         CommonModule,
+        DirectiveModule,
     ],
     exports: [
         CardComponent,
