@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import {FormControl} from '@angular/forms';
+
+import { TplFormControl } from '../../../models/tpl-form-control';
 
 @Component({
   selector: 'app-text-input',
@@ -6,8 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./text-input.component.css']
 })
 export class TextInputComponent {
-  @Input() label;
-  @Input() placeholder;
-  @Input() formControlName;
-  value;
+  @Input() tplFormControl: TplFormControl;
+  
+  // use default for hide error in browser: it not importance:
+  defaultFormControl = new FormControl(); 
 }
+

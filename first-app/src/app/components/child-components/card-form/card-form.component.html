@@ -1,19 +1,16 @@
-<form class="form-horizontal" [formGroup]="cardForm">
-  <div class="form-group" *ngFor="let input of arrLoopRenderForm">
-    <label for="text" class="control-label col-sm-2">{{input.label ? input.label : 'Label:'}}</label>
-    <div class="col-sm-10">
-      <input [type]="input.type ? input.type : 'text'" class="form-control" id="text" [placeholder]="input.placeholder ? input.placeholder : 'text input'"
-        [formControlName]="input.formControlName" autofocus/>
-      <div [hidden]="cardForm.controls[input.formControlName].valid || cardForm.controls[input.formControlName].pristine" class="alert alert-danger">
-        {{input.formControlName}} is required
-      </div>
-    </div>
-  </div>
+<form class="form-horizontal" [formGroup]="cardForm" (ngSubmit)="_onSubmit()">
+  <app-text-input 
+    *ngFor="let tplFormControl of formArrays" 
+    [tplFormControl]="tplFormControl"
+  >
+  </app-text-input>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button class="btn btn-default" (click)="formCancel()">Cancel</button>
-      <button type="submit" class="btn btn-success" [disabled]="cardForm.invalid" (click)="formSubmit()">Save</button>
+      <button type="submit" class="btn btn-success" [disabled]="cardForm.invalid">Save</button>
     </div>
   </div>
 </form>
+
+<!-- <pre>cardForm valid: {{cardForm.valid}}</pre>
+<pre>{{cardForm.value | json}}</pre> -->

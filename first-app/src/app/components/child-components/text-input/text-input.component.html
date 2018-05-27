@@ -1,12 +1,16 @@
-<div class="form-group">
-  <label for="text" class="control-label col-sm-2">{{label ? label : 'Label:'}}</label>
-  <div class="col-sm-10">
-    <input type="text" 
-      class="form-control" 
-      id="text" 
-      [placeholder]="placeholder ? placeholder : 'text input'" 
-      [(ngModel)]="value"
-      formControlName="formControlName"
-    />
+<div>
+  <div class="form-group">
+    <label for="text" class="control-label col-sm-2">{{tplFormControl ? tplFormControl.label : 'Label: '}}</label>
+    <div class="col-sm-10">
+      <input [type]="tplFormControl?.type ? tplFormControl.type : 'text'" 
+        class="form-control" id="text" 
+        [placeholder]="tplFormControl?.placeholder ? tplFormControl.placeholder : '@entry'"
+        [formControl]="tplFormControl?.formControl ? tplFormControl.formControl : defaultFormControl" 
+      />
+      <div *ngIf="tplFormControl?.formControl?.invalid && tplFormControl?.formControl?.dirty" class="alert alert-danger">
+        <p *ngIf="tplFormControl?.formControl?.errors?.required">require</p>
+      </div>
+    </div>
   </div>
 </div>
+

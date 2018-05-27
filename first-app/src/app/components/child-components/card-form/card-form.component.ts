@@ -1,45 +1,42 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
+
+import { TplFormControl } from '../../../models/tpl-form-control';
 
 @Component({
   selector: 'app-card-form',
   templateUrl: './card-form.component.html',
   styleUrls: ['./card-form.component.css']
 })
-export class CardFormComponent {
-  // cardForm:
+export class CardFormComponent implements OnInit {
+
   cardForm: FormGroup;
-  initCardForm() {
-    this.cardForm = this.fb.group({
-      header: ['', Validators.required],
-      content: ['', Validators.required],
-      footer: ['', Validators.required],
-    })
-  }
+  formArrays: TplFormControl[];
 
-  //array for create template:
-  arrLoopRenderForm = [
-    {label: 'Header: ', placeholder: '@Header input', formControlName: 'header'},
-    {label: 'Content: ', placeholder: '@Content input', formControlName: 'content'},
-    {label: 'Footer: ', placeholder: '@Footer input', formControlName: 'footer'},
-  ]
-
-  //output of cardForm:
-  @Output() onCancel = new EventEmitter();
   @Output() onSubmit = new EventEmitter();
 
-  constructor(private fb: FormBuilder) {
-    this.initCardForm();
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    // template need this.formArrays instead this.initFormArray() if so it can not type input text.
+    this.formArrays = this.initFormArray();
+    const [header, content, footer] = this.formArrays.map(tplfc => tplfc.formControl);
+    console.log(JSON.stringify(header));
+    this.cardForm = this.fb.group({
+      header,content, footer,
+    });
   }
 
-  formCancel(){
-    // console.log('cancel')
-    this.onCancel.emit();
+  initFormArray() {
+    return [
+      new TplFormControl('Header :', '@entry header', 'tel', new FormControl('', Validators.required)),
+      new TplFormControl('Content :', '@entry content', 'text', new FormControl(null, Validators.required)),
+      new TplFormControl('Footer :', '@entry footer', 'text', new FormControl(null, Validators.required)),
+    ];
   }
 
-  formSubmit() {
-    // console.log('form submit' + JSON.stringify(this.cardForm.value))
+  _onSubmit(){
+    // console.log(this.cardForm.valid);
     this.onSubmit.emit(this.cardForm.value);
   }
-
 }
