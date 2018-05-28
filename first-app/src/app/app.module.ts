@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import {HomeModule} from './components/pages/home/home.module';
 import {AboutModule} from './components/pages/about/about.module';
 import { ListProductModule } from './components/pages/list-product/list-product.module';
+import { ServiceModule } from './services/service.module';
 
 import { AppComponent } from './app.component';
 
@@ -13,11 +14,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    ServiceModule,
     HomeModule,
     AboutModule,
     ListProductModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { } //oke

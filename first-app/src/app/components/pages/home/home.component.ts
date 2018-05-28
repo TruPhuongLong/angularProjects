@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor() { }
+  listUser;
+  constructor(public apiService: ApiService) { }
 
   ngOnInit() {
-    
+    this.apiService.getUserPlaceholder()
+    .then(data => this.listUser = data)
+    .catch(error => console.log(error));
   }
 
 }

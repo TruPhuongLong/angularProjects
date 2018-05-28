@@ -6,10 +6,13 @@
 <p>
   home works!
 </p>
-<div>
-  <app-text-input [tplFormControl]="tplFormControl"></app-text-input>
-</div>
-
+<input type="text" [(ngModel)]="apiService.value"/>
+<p>{{apiService.value}}</p>
+<ul>
+  <li *ngFor="let user of listUser">
+    {{user.name}}
+  </li>
+</ul>
 
 <app-footer>
   <i>copyright @2018</i>
