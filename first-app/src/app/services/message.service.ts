@@ -5,4 +5,7 @@ export class MessageService{
     successAlert(mes){
         window.alert(mes);
     }
+    failAlert(mes){
+        window.alert(mes);
+    }
 }

@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 import { ChildModule } from '../../child-components/child.module';
@@ -14,6 +14,7 @@ import { HomeComponent } from './home.component';
         ChildModule,
         FormsModule,
         CommonModule,
+        ReactiveFormsModule,
     ],
     exports: [
         HomeComponent

@@ -1,21 +1,19 @@
-import {Http, } from '@angular/http';
-import {Injectable, } from '@angular/core'
+import { Http, } from '@angular/http';
+import { Injectable, } from '@angular/core'
 import { MessageService } from './message.service';
-
+import 'rxjs/RX';
 
 @Injectable()
 export class ApiService {
-    value = 'im api service';
-    constructor(private http: Http, private mes: MessageService){
-        console.log('Api Service constructor')
-    }
+    url = 'https://itunes.apple.com/search';
+    constructor(private http: Http, private mes: MessageService) {    }
 
-    getUserPlaceholder(){
-        return this.http.get('https://jsonplaceholder.typicode.com/users').toPromise()
-        .then(data => {
-            // this.mes.success('get user success');
-            this.mes.successAlert('success')
-            return data.json();
-        })
+    search(term) {
+        let apiURL = `${this.url}?term=${term}&media=music&limit=20`;
+        return this.http.get(apiURL)
+            .map(res => {
+                return res.json().results
+            });
     }
 }
+
