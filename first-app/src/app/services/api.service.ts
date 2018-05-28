@@ -1,5 +1,5 @@
-import { Http, } from '@angular/http';
-import { Injectable, } from '@angular/core'
+import { Http } from '@angular/http';
+import { Injectable } from '@angular/core'
 import { MessageService } from './message.service';
 import 'rxjs/RX';
 
