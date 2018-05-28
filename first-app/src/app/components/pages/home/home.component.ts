@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
-import { ApiService } from '../../../services/api.service';
+import {Router} from '@angular/router';
 import 'rxjs/Rx';
+
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +15,9 @@ export class HomeComponent implements OnInit {
   searchField;
   loading;
 
-  constructor(public apiService: ApiService) { }
+  constructor(public apiService: ApiService, private router: Router) { console.log('home constructor')}
 
   ngOnInit() {
-    
       this.searchField = new FormControl();
       this.data = this.searchField.valueChanges
       .debounceTime(400)
@@ -24,9 +25,10 @@ export class HomeComponent implements OnInit {
       .do( () => this.loading = true)
       .switchMap( term => this.apiService.search(term))
       .do( () => this.loading = false )
-      
-    
   }
 
+  navigateAbout(){
+    this.router.navigate(['about'])
+  }
 
 }
