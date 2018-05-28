@@ -3,6 +3,8 @@ import { HttpModule } from '@angular/http';
 
 import { ApiService } from './api.service';
 import { MessageService } from './message.service';
+import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 
 @NgModule({
     imports: [
@@ -11,6 +13,8 @@ import { MessageService } from './message.service';
     providers: [
         ApiService,
         MessageService,
+        AuthService,
+        UserService,
     ]
 })
 
